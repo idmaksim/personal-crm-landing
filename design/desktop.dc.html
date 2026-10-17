@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  a { color: inherit; text-decoration: none; }
+</style>
+</helmet>
+<div style="min-height:100vh; background:#ECEBE8; padding:28px; font-family:'Golos Text',sans-serif;">
+  <div style="max-width:1160px; margin:0 auto; background:#FFFEFC; border:1px solid #E6E3DD; border-radius:28px; box-shadow:0 30px 70px -36px rgba(55,53,47,.3); overflow:hidden;">
+
+    <!-- Nav -->
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:26px 48px; border-bottom:1px solid #F0EDE7;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div style="width:24px; height:24px; border-radius:7px; background:#37352F; display:flex; align-items:center; justify-content:center;"><div style="width:9px; height:9px; border-radius:50%; border:2px solid #FFFEFC;"></div></div>
+        <span style="font:600 18px 'Golos Text'; color:#37352F;">Круг</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:24px;">
+        <a href="#" style="font:500 15px 'Golos Text'; color:#787066;">Войти</a>
+        <a href="#" style="display:flex; align-items:center; height:42px; padding:0 20px; background:#37352F; color:#FFFEFC; border-radius:10px; font:600 15px 'Golos Text';">Открыть CRM</a>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div style="display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center; padding:72px 48px 76px;">
+      <div style="display:flex; flex-direction:column; gap:24px; min-width:0;">
+        <h1 style="margin:0; font:700 60px/1.05 'Golos Text'; letter-spacing:-.025em; color:#37352F; text-wrap:pretty;">Все твои связи — под рукой</h1>
+        <p style="margin:0; font:400 20px/1.5 'Golos Text'; color:#787066; max-width:460px;">Личная CRM, которая помнит за тебя: с кем ты общался, о чём договорились и кому пора написать.</p>
+        <div style="display:flex; align-items:center; gap:18px; margin-top:6px;">
+          <a href="#" style="display:flex; align-items:center; justify-content:center; height:54px; padding:0 30px; background:#37352F; color:#FFFEFC; border-radius:12px; font:600 17px 'Golos Text';">Открыть CRM</a>
+          <span style="font:400 14px 'Golos Text'; color:#B2ADA3;">Без карты · данные только у тебя</span>
+        </div>
+      </div>
+      <div style="min-width:0;">
+        <div style="border:1px solid #EDEAE4; border-radius:20px; padding:22px; background:#FDFCFA; box-shadow:0 20px 44px -28px rgba(55,53,47,.3);">
+          <div style="font:600 13px 'Golos Text'; letter-spacing:.06em; text-transform:uppercase; color:#B59B5E; margin-bottom:16px;">Напоминания</div>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div style="display:flex; align-items:center; gap:14px; padding:14px 16px; background:#FDFCFA; border:1px solid #EFECE6; border-radius:13px;">
+              <div style="width:38px; height:38px; border-radius:50%; background:#E7EEE8; color:#6E8A76; display:flex; align-items:center; justify-content:center; font:600 14px 'Golos Text'; flex-shrink:0;">МЛ</div>
+              <div style="flex:1; min-width:0;"><div style="font:600 15px 'Golos Text'; color:#37352F;">Марина Лебедева</div><div style="font:400 13px 'Golos Text'; color:#9B958B; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Прислать контакт дизайнера</div></div>
+              <span style="display:inline-flex; align-items:center; gap:6px; padding:5px 10px; background:#F0EAD9; border-radius:20px; font:600 11px 'Golos Text'; color:#A5832F; flex-shrink:0;"><span style="width:6px; height:6px; border-radius:50%; background:#C79A3E;"></span>завтра</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:14px; padding:14px 16px; background:#FDFCFA; border:1px solid #EFECE6; border-radius:13px;">
+              <div style="width:38px; height:38px; border-radius:50%; background:#EFE9DE; color:#9A8C6E; display:flex; align-items:center; justify-content:center; font:600 14px 'Golos Text'; flex-shrink:0;">АК</div>
+              <div style="flex:1; min-width:0;"><div style="font:600 15px 'Golos Text'; color:#37352F;">Антон Кравцов</div><div style="font:400 13px 'Golos Text'; color:#9B958B; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Уточнить про кейс по онбордингу</div></div>
+              <span style="display:inline-flex; align-items:center; padding:5px 10px; background:#F2EFE9; border-radius:20px; font:600 11px 'Golos Text'; color:#8A7C66; flex-shrink:0;">3 дня</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:14px; padding:14px 16px; background:#FDFCFA; border:1px solid #EFECE6; border-radius:13px;">
+              <div style="width:38px; height:38px; border-radius:50%; background:#EAE5F0; color:#857399; display:flex; align-items:center; justify-content:center; font:600 14px 'Golos Text'; flex-shrink:0;">ИС</div>
+              <div style="flex:1; min-width:0;"><div style="font:600 15px 'Golos Text'; color:#37352F;">Игорь Соколов</div><div style="font:400 13px 'Golos Text'; color:#9B958B; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Предложить встречу за кофе</div></div>
+              <span style="display:inline-flex; align-items:center; padding:5px 10px; background:#F2EFE9; border-radius:20px; font:600 11px 'Golos Text'; color:#8A7C66; flex-shrink:0;">5 дней</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Проблема -->
+    <div style="padding:76px 48px; background:#FBFAF7; border-top:1px solid #F0EDE7; border-bottom:1px solid #F0EDE7;">
+      <div style="max-width:780px; margin:0 auto; display:flex; flex-direction:column; gap:20px;">
+        <span style="font:600 13px 'Golos Text'; letter-spacing:.09em; text-transform:uppercase; color:#B59B5E;">Знакомо?</span>
+        <div style="font:400 20px/1.55 'Golos Text'; color:#787066; text-wrap:pretty; display:flex; flex-direction:column; gap:14px;">
+          <div style="display:flex; gap:12px;"><span style="color:#C7B486; flex-shrink:0;">—</span><span>Ты знакомишься с десятками людей — на конференциях, в чатах, за кофе. А через месяц уже не помнишь ни имени, ни о чём договаривались?</span></div>
+          <div style="display:flex; gap:12px;"><span style="color:#C7B486; flex-shrink:0;">—</span><span>Визитки теряются, контакты лежат в телефоне мёртвым грузом, а написать «сто лет не виделись» уже неловко?</span></div>
+          <div style="display:flex; gap:12px;"><span style="color:#C7B486; flex-shrink:0;">—</span><span>Полезные связи тихо затухают — просто потому что некому было напомнить.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Решение -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; padding:84px 48px;">
+      <div style="display:flex; flex-direction:column; gap:18px; min-width:0;">
+        <span style="font:600 13px 'Golos Text'; letter-spacing:.09em; text-transform:uppercase; color:#B59B5E;">Как это работает</span>
+        <h2 style="margin:0; font:700 38px/1.15 'Golos Text'; letter-spacing:-.02em; color:#37352F; text-wrap:pretty;">Все твои люди — в одном месте</h2>
+        <p style="margin:0; font:400 18px/1.55 'Golos Text'; color:#787066; max-width:500px; text-wrap:pretty;">По каждому — короткие заметки: где познакомились, о чём говорили, что ты пообещал. Система сама напоминает, кому пора написать, пока связь остаётся тёплой. Контакты подтягиваются из телефона, почты и LinkedIn — вручную забивать ничего не нужно.</p>
+      </div>
+      <div style="min-width:0; border:1px solid #EDEAE4; border-radius:20px; padding:22px; background:#FDFCFA;">
+        <div style="font:600 15px 'Golos Text'; color:#37352F; margin-bottom:16px;">Антон Кравцов</div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; gap:10px;"><span style="color:#C7B486;">—</span><span style="font:400 15px/1.5 'Golos Text'; color:#787066;">Познакомились на SaaS Meetup, Берлин</span></div>
+          <div style="display:flex; gap:10px;"><span style="color:#C7B486;">—</span><span style="font:400 15px/1.5 'Golos Text'; color:#787066;">Делает B2B-аналитику, искал интеграции</span></div>
+          <div style="display:flex; gap:10px;"><span style="color:#C7B486;">—</span><span style="font:400 15px/1.5 'Golos Text'; color:#787066;">Обещал прислать кейс по онбордингу</span></div>
+        </div>
+        <div style="margin-top:18px; padding-top:16px; border-top:1px solid #EFECE6; display:flex; gap:8px;">
+          <span style="padding:5px 11px; background:#F2EFE9; border-radius:20px; font:500 12px 'Golos Text'; color:#8A7C66;">Телефон</span>
+          <span style="padding:5px 11px; background:#F2EFE9; border-radius:20px; font:500 12px 'Golos Text'; color:#8A7C66;">Почта</span>
+          <span style="padding:5px 11px; background:#F2EFE9; border-radius:20px; font:500 12px 'Golos Text'; color:#8A7C66;">LinkedIn</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Выгоды -->
+    <div style="padding:84px 48px; background:#FBFAF7; border-top:1px solid #F0EDE7;">
+      <span style="display:block; font:600 13px 'Golos Text'; letter-spacing:.09em; text-transform:uppercase; color:#B59B5E; margin-bottom:28px;">Что это даёт</span>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <div style="display:flex; gap:16px; align-items:flex-start; background:#FFFEFC; border:1px solid #EDEAE4; border-radius:16px; padding:24px;">
+          <div style="width:30px; height:30px; border-radius:9px; background:#F0EAD9; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B38A3C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+          <div style="flex:1; display:flex; flex-direction:column; gap:4px;"><div style="font:600 17px/1.3 'Golos Text'; color:#37352F;">Входишь в разговор с готовым контекстом</div><div style="font:400 16px/1.45 'Golos Text'; color:#787066; text-wrap:pretty;">Помнишь о человеке всё важное</div></div>
+        </div>
+        <div style="display:flex; gap:16px; align-items:flex-start; background:#FFFEFC; border:1px solid #EDEAE4; border-radius:16px; padding:24px;">
+          <div style="width:30px; height:30px; border-radius:9px; background:#F0EAD9; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B38A3C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+          <div style="flex:1; display:flex; flex-direction:column; gap:4px;"><div style="font:600 17px/1.3 'Golos Text'; color:#37352F;">Поддерживаешь связь со всеми, кто важен</div><div style="font:400 16px/1.45 'Golos Text'; color:#787066; text-wrap:pretty;">Напоминания держат отношения живыми</div></div>
+        </div>
+        <div style="display:flex; gap:16px; align-items:flex-start; background:#FFFEFC; border:1px solid #EDEAE4; border-radius:16px; padding:24px;">
+          <div style="width:30px; height:30px; border-radius:9px; background:#F0EAD9; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B38A3C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+          <div style="flex:1; display:flex; flex-direction:column; gap:4px;"><div style="font:600 17px/1.3 'Golos Text'; color:#37352F;">Нужный человек находится за секунды</div><div style="font:400 16px/1.45 'Golos Text'; color:#787066; text-wrap:pretty;">Нетворкинг работает на тебя</div></div>
+        </div>
+        <div style="display:flex; gap:16px; align-items:flex-start; background:#FFFEFC; border:1px solid #EDEAE4; border-radius:16px; padding:24px;">
+          <div style="width:30px; height:30px; border-radius:9px; background:#F0EAD9; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B38A3C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+          <div style="flex:1; display:flex; flex-direction:column; gap:4px;"><div style="font:600 17px/1.3 'Golos Text'; color:#37352F;">Вся база в одном месте</div><div style="font:400 16px/1.45 'Golos Text'; color:#787066; text-wrap:pretty;">Вместо десяти мессенджеров</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Финальный CTA -->
+    <div style="padding:96px 48px; background:#F7F3EA; display:flex; flex-direction:column; align-items:center; gap:30px; text-align:center;">
+      <h2 style="margin:0; max-width:720px; font:700 42px/1.2 'Golos Text'; letter-spacing:-.02em; color:#37352F; text-wrap:pretty;">Твои связи — твой капитал. Распоряжайся им с умом.</h2>
+      <a href="#" style="display:flex; align-items:center; justify-content:center; height:58px; padding:0 40px; background:#37352F; color:#FFFEFC; border-radius:12px; font:600 18px 'Golos Text';">Открыть CRM</a>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,4 @@
+# Allow native build scripts needed for the Astro build (esbuild, sharp).
+allowBuilds:
+  esbuild: true
+  sharp: true

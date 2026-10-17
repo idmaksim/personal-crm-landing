@@ -1,0 +1,357 @@
+---
+import '../styles/tokens.css';
+
+// Single CTA target: the app. Secondary action ("Войти") — same app (login).
+const appUrl = 'https://app.dobry.online';
+
+// Centered content column. Single-column (mobile/tablet) layout is capped to a
+// comfortable reading width so it doesn't stretch; desktop uses the mock's 1160px.
+const wrap = 'mx-auto w-full max-w-[600px] lg:max-w-[1160px]';
+
+// Eyebrow (uppercase over-heading) — shared styling.
+const eyebrow =
+  'font-semibold text-xs lg:text-[13px] tracking-[0.09em] uppercase text-eyebrow';
+// Dark CTA button — shared styling + hover.
+const btn =
+  'flex items-center justify-center bg-ink text-surface font-semibold rounded-[12px] hover:bg-ink-hover transition-colors';
+
+// Benefits: title + one-line description (README section 6).
+const benefits = [
+  ['Входишь в разговор с готовым контекстом', 'Помнишь о человеке всё важное'],
+  ['Поддерживаешь связь со всеми, кто важен', 'Напоминания держат отношения живыми'],
+  ['Нужный человек находится за секунды', 'Нетворкинг работает на тебя'],
+  ['Вся база в одном месте', 'Вместо десяти мессенджеров'],
+];
+
+// "Знакомо?" problem list (README section 4).
+const problems = [
+  'Ты знакомишься с десятками людей — на конференциях, в чатах, за кофе. А через месяц уже не помнишь ни имени, ни о чём договаривались?',
+  'Визитки теряются, контакты лежат в телефоне мёртвым грузом, а написать «сто лет не виделись» уже неловко?',
+  'Полезные связи тихо затухают — просто потому что некому было напомнить.',
+];
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Круг — личная CRM</title>
+    <meta
+      name="description"
+      content="Личная CRM, которая помнит за тебя: с кем ты общался, о чём договорились и кому пора написать."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-surface font-sans text-ink">
+    <!-- Nav -->
+    <header class="lg:border-b lg:border-hairline">
+      <div
+        class={`${wrap} flex items-center justify-between px-[26px] py-[22px] lg:px-12 lg:py-[26px]`}
+      >
+        <div class="flex items-center gap-[9px] lg:gap-[10px]">
+          <div
+            class="w-[22px] h-[22px] lg:w-6 lg:h-6 rounded-[7px] bg-ink flex items-center justify-center"
+          >
+            <div class="w-2 h-2 lg:w-[9px] lg:h-[9px] rounded-full border-2 border-surface"></div>
+          </div>
+          <span class="font-semibold text-base lg:text-[18px] text-ink">Круг</span>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href={appUrl} class="font-medium text-sm lg:text-[15px] text-body">Войти</a>
+          <a href={appUrl} class={`hidden lg:flex h-[42px] px-5 text-[15px] ${btn}`}>Открыть CRM</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section>
+      <div
+        class={`${wrap} flex flex-col gap-5 px-[26px] pt-[30px] pb-2 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:items-center lg:px-12 lg:pt-[72px] lg:pb-[76px]`}
+      >
+        <!-- Left column -->
+        <div class="flex flex-col gap-5 lg:gap-6 min-w-0">
+          <h1
+            class="m-0 text-ink font-bold text-[40px] leading-[1.08] tracking-[-0.02em] lg:text-[60px] lg:leading-[1.05] lg:tracking-[-0.025em] text-pretty"
+          >
+            Все твои связи — под рукой
+          </h1>
+          <p
+            class="m-0 text-body font-normal text-[17px] leading-[1.5] lg:text-[20px] lg:max-w-[460px]"
+          >
+            Личная CRM, которая помнит за тебя: с кем ты общался, о чём договорились и кому пора
+            написать.
+          </p>
+
+          <!-- Mobile CTA -->
+          <a href={appUrl} class={`lg:hidden h-[52px] text-base mt-1 ${btn}`}>Открыть CRM</a>
+          <!-- Desktop CTA + disclaimer -->
+          <div class="hidden lg:flex items-center gap-[18px] mt-1.5">
+            <a href={appUrl} class={`h-[54px] px-[30px] text-[17px] ${btn}`}>Открыть CRM</a>
+            <span class="text-muted-2 font-normal text-sm">Без карты · данные только у тебя</span>
+          </div>
+
+          <!-- Mobile contact card -->
+          <div
+            class="lg:hidden mt-[14px] border border-border-card rounded-[16px] p-[18px] bg-surface-2"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full bg-av-gold-bg text-av-gold-ink flex items-center justify-center font-semibold text-[15px] shrink-0"
+              >
+                АК
+              </div>
+              <div class="flex-1 min-w-0">
+                <span class="font-semibold text-[15px] text-ink">Антон Кравцов</span>
+                <div class="font-normal text-[13px] text-muted mt-0.5">
+                  Познакомились на SaaS Meetup
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 flex items-center gap-[14px] p-4 bg-band rounded-[13px]">
+              <div class="w-8 h-8 rounded-full bg-bell-bg flex items-center justify-center shrink-0">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="var(--color-icon-stroke)"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+              </div>
+              <div class="flex-1 min-w-0 flex flex-col gap-1">
+                <div
+                  class="font-normal text-sm text-ink whitespace-nowrap overflow-hidden text-ellipsis"
+                >
+                  Уточнить про кейс по онбордингу
+                </div>
+                <div class="font-normal text-xs text-muted">через 3 дня</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile disclaimer -->
+          <div class="lg:hidden font-normal text-[13px] text-muted-2 mt-0.5">
+            Без карты · данные только у тебя
+          </div>
+        </div>
+
+        <!-- Right column: reminders panel (desktop only) -->
+        <div class="hidden lg:block min-w-0">
+          <div
+            class="border border-border-card rounded-[20px] p-[22px] bg-surface-2 shadow-[0_20px_44px_-28px_rgba(55,53,47,0.3)]"
+          >
+            <div class="font-semibold text-[13px] tracking-[0.06em] uppercase text-eyebrow mb-4">
+              Напоминания
+            </div>
+            <div class="flex flex-col gap-3">
+              <!-- row 1: nearest, gold chip -->
+              <div
+                class="flex items-center gap-[14px] px-4 py-[14px] bg-surface-2 border border-border-card-2 rounded-[13px]"
+              >
+                <div
+                  class="w-[38px] h-[38px] rounded-full bg-av-green-bg text-av-green-ink flex items-center justify-center font-semibold text-sm shrink-0"
+                >
+                  МЛ
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="font-semibold text-[15px] text-ink">Марина Лебедева</div>
+                  <div
+                    class="font-normal text-[13px] text-muted whitespace-nowrap overflow-hidden text-ellipsis"
+                  >
+                    Прислать контакт дизайнера
+                  </div>
+                </div>
+                <span
+                  class="inline-flex items-center gap-[6px] px-[10px] py-[5px] bg-accent-bg rounded-[20px] font-semibold text-[11px] text-accent-ink shrink-0"
+                >
+                  <span class="w-[6px] h-[6px] rounded-full bg-accent"></span>завтра
+                </span>
+              </div>
+              <!-- row 2: neutral chip -->
+              <div
+                class="flex items-center gap-[14px] px-4 py-[14px] bg-surface-2 border border-border-card-2 rounded-[13px]"
+              >
+                <div
+                  class="w-[38px] h-[38px] rounded-full bg-av-gold-bg text-av-gold-ink flex items-center justify-center font-semibold text-sm shrink-0"
+                >
+                  АК
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="font-semibold text-[15px] text-ink">Антон Кравцов</div>
+                  <div
+                    class="font-normal text-[13px] text-muted whitespace-nowrap overflow-hidden text-ellipsis"
+                  >
+                    Уточнить про кейс по онбордингу
+                  </div>
+                </div>
+                <span
+                  class="inline-flex items-center px-[10px] py-[5px] bg-chip-bg rounded-[20px] font-semibold text-[11px] text-chip-ink shrink-0"
+                  >3 дня</span
+                >
+              </div>
+              <!-- row 3: neutral chip -->
+              <div
+                class="flex items-center gap-[14px] px-4 py-[14px] bg-surface-2 border border-border-card-2 rounded-[13px]"
+              >
+                <div
+                  class="w-[38px] h-[38px] rounded-full bg-av-purple-bg text-av-purple-ink flex items-center justify-center font-semibold text-sm shrink-0"
+                >
+                  ИС
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="font-semibold text-[15px] text-ink">Игорь Соколов</div>
+                  <div
+                    class="font-normal text-[13px] text-muted whitespace-nowrap overflow-hidden text-ellipsis"
+                  >
+                    Предложить встречу за кофе
+                  </div>
+                </div>
+                <span
+                  class="inline-flex items-center px-[10px] py-[5px] bg-chip-bg rounded-[20px] font-semibold text-[11px] text-chip-ink shrink-0"
+                  >5 дней</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Проблема -->
+    <section class="lg:bg-surface-3 lg:border-t lg:border-b lg:border-hairline">
+      <div class={`${wrap} px-[26px] pt-12 lg:px-12 lg:py-[76px]`}>
+        <div class="flex flex-col gap-[14px] lg:gap-5 lg:max-w-[780px] lg:mx-auto">
+          <span class={eyebrow}>Знакомо?</span>
+          <div
+            class="flex flex-col gap-3 lg:gap-[14px] text-body font-normal text-[17px] leading-[1.55] lg:text-[20px] text-pretty"
+          >
+            {
+              problems.map((text) => (
+                <div class="flex gap-[10px] lg:gap-3">
+                  <span class="text-dash shrink-0">—</span>
+                  <span>{text}</span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Решение -->
+    <section>
+      <div
+        class={`${wrap} px-[26px] pt-11 lg:px-12 lg:py-[84px] lg:grid lg:grid-cols-2 lg:gap-14 lg:items-center`}
+      >
+        <div class="flex flex-col gap-[14px] lg:gap-[18px] min-w-0">
+          <span class={eyebrow}>Как это работает</span>
+          <h2
+            class="m-0 text-ink font-bold text-[27px] leading-[1.18] tracking-[-0.015em] lg:text-[38px] lg:leading-[1.15] lg:tracking-[-0.02em] text-pretty"
+          >
+            Все твои люди — в одном месте
+          </h2>
+          <p
+            class="m-0 text-body font-normal text-[17px] leading-[1.55] lg:text-[18px] lg:max-w-[500px] text-pretty"
+          >
+            По каждому — короткие заметки: где познакомились, о чём говорили, что ты пообещал.
+            Система сама напоминает, кому пора написать, пока связь остаётся тёплой. Контакты
+            подтягиваются из телефона, почты и LinkedIn — вручную забивать ничего не нужно.
+          </p>
+        </div>
+
+        <!-- Source card (desktop only) -->
+        <div
+          class="hidden lg:block min-w-0 border border-border-card rounded-[20px] p-[22px] bg-surface-2"
+        >
+          <div class="font-semibold text-[15px] text-ink mb-4">Антон Кравцов</div>
+          <div class="flex flex-col gap-3">
+            {
+              [
+                'Познакомились на SaaS Meetup, Берлин',
+                'Делает B2B-аналитику, искал интеграции',
+                'Обещал прислать кейс по онбордингу',
+              ].map((note) => (
+                <div class="flex gap-[10px]">
+                  <span class="text-dash">—</span>
+                  <span class="font-normal text-[15px] leading-[1.5] text-body">{note}</span>
+                </div>
+              ))
+            }
+          </div>
+          <div class="mt-[18px] pt-4 border-t border-border-card-2 flex gap-2">
+            {
+              ['Телефон', 'Почта', 'LinkedIn'].map((src) => (
+                <span class="px-[11px] py-[5px] bg-chip-bg rounded-[20px] font-medium text-xs text-chip-ink">
+                  {src}
+                </span>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Выгоды -->
+    <section class="lg:bg-surface-3 lg:border-t lg:border-hairline">
+      <div class={`${wrap} px-[26px] pt-11 lg:px-12 lg:py-[84px]`}>
+        <span class={`block lg:mb-7 ${eyebrow}`}>Что это даёт</span>
+        <div class="flex flex-col gap-[14px] mt-[18px] lg:mt-0 lg:grid lg:grid-cols-2 lg:gap-5">
+          {
+            benefits.map(([title, desc]) => (
+              <div class="flex gap-[13px] lg:gap-4 items-start lg:bg-surface lg:border lg:border-border-card lg:rounded-[16px] lg:p-6">
+                <div class="w-[26px] h-[26px] lg:w-[30px] lg:h-[30px] rounded-[8px] lg:rounded-[9px] bg-accent-bg flex items-center justify-center shrink-0 mt-px">
+                  <svg
+                    class="w-3.5 h-3.5 lg:w-4 lg:h-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--color-icon-stroke)"
+                    stroke-width="2.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div class="flex-1 flex flex-col gap-[3px] lg:gap-1">
+                  <div class="font-semibold text-base leading-[1.3] lg:text-[17px] text-ink">
+                    {title}
+                  </div>
+                  <div class="font-normal text-[15px] leading-[1.45] lg:text-base text-body text-pretty">
+                    {desc}
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Финальный CTA -->
+    <section class="bg-band mt-12 lg:mt-0">
+      <div
+        class={`${wrap} px-[26px] pt-10 pb-11 lg:px-12 lg:py-24 flex flex-col gap-[22px] lg:gap-[30px] lg:items-center lg:text-center`}
+      >
+        <h2
+          class="m-0 text-ink font-bold text-[28px] leading-[1.22] tracking-[-0.015em] lg:text-[42px] lg:leading-[1.2] lg:tracking-[-0.02em] lg:max-w-[720px] text-pretty"
+        >
+          Твои связи — твой капитал. Распоряжайся им с умом.
+        </h2>
+        <a href={appUrl} class={`h-[54px] lg:h-[58px] lg:px-10 text-base lg:text-[18px] ${btn}`}
+          >Открыть CRM</a
+        >
+      </div>
+    </section>
+  </body>
+</html>
