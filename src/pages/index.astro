@@ -4,6 +4,15 @@ import '../styles/tokens.css';
 // Single CTA target: the app. Secondary action ("Войти") — same app (login).
 const appUrl = 'https://app.dobrymaxx.ru';
 
+// Link-preview (Open Graph / Twitter) metadata. Title + description reuse the
+// page's own copy; the image is a pre-rendered card in the landing style
+// (public/og.png, 2400×1260 — 1.91:1). Absolute URLs built from astro.config `site`.
+const pageTitle = 'Круг — личная CRM';
+const pageDescription =
+  'Личная CRM, которая помнит за тебя: с кем ты общался, о чём договорились и кому пора написать.';
+const canonicalUrl = new URL('/', Astro.site).href;
+const ogImageUrl = new URL('/og.png', Astro.site).href;
+
 // Centered content column. Single-column (mobile/tablet) layout is capped to a
 // comfortable reading width so it doesn't stretch; desktop uses the mock's 1160px.
 const wrap = 'mx-auto w-full max-w-[600px] lg:max-w-[1160px]';
@@ -36,11 +45,30 @@ const problems = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Круг — личная CRM</title>
-    <meta
-      name="description"
-      content="Личная CRM, которая помнит за тебя: с кем ты общался, о чём договорились и кому пора написать."
-    />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph (Facebook, Telegram, WhatsApp, LinkedIn, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Круг" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Круг — личная CRM: все твои связи под рукой" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content="Круг — личная CRM: все твои связи под рукой" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
