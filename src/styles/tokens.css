@@ -23,6 +23,8 @@
   --color-muted: #9B958B;         /* captions */
   --color-muted-2: #B2ADA3;       /* quietest text (disclaimer) */
 
+  --color-danger: #B24B38;        /* destructive action / error (terracotta) */
+
   --color-eyebrow: #B59B5E;       /* uppercase eyebrows */
   --color-accent: #C79A3E;        /* accent dot */
   --color-accent-ink: #A5832F;    /* text on gold chip */
